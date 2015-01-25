@@ -68,15 +68,28 @@ shinyServer(
       })}
     ##############################################################
     
+     if (input$bestracer == "Mario") {
+       output$obestracer <- renderPrint('You selected correctly!')
+     }
+     else if (input$bestracer == "Peter") {
+       output$obestracer <- renderPrint('Sorry, wrong answer, please try again!')
+     } else {output$obestracer <- renderPrint("Choose wisely!")}
+    
     if (input$bestracer == "Mario") {
-      output$ocharacterpic <-
-      output$obestracer <- renderPrint(input$bestracer)
+      filename <- normalizePath(file.path('./images', paste('peach','.png',sep='')))
+    } else if (input$bestracer == "Peter") {
+      filename <- normalizePath(file.path('./images', paste('yoshi','.png',sep=''))) 
+    } 
+    else if (input$bestracer == "???") {
+      filename <- normalizePath(file.path('./images', paste('base','.png',sep='')))   
     }
     
-    else if (input$bestracer == "Peter") {
-      output$character <-
-      output$obestracer <- renderPrint(input$bestracer)
-    }
+    
+    # image2 sends pre-rendered images
+    output$image2 <- renderImage({
+      list(src=filename)
+      }, deleteFile=FALSE)
+
     
   })
 })

@@ -61,9 +61,10 @@ shinyUI(pageWithSidebar(
     h3('Density plot'),
     plotOutput('ggDensity'),
     p('It\'s probably quite clear who is the better racer...! '),
-    selectInput("bestracer", label = h4("Chose the ALL TIME CHAMP !!! "), 
-                choices = list("Mario" = "Mario", "Peter" = "Peter"), selected = 1),
-    verbatimTextOutput('obestracer')
+    selectInput("bestracer", label = h4("Who is the all time CHAMP ?! "), 
+                choices = list("???" = "???", "Mario" = "Mario", "Peter" = "Peter"), selected = NULL),
+    verbatimTextOutput('obestracer'),
+    imageOutput("image2")
     )
   )
 )
