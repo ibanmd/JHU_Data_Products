@@ -60,14 +60,23 @@ shinyServer(
     ################################### AND NOW FINALLY THE GGPLOT
     ## ggplot
     matchrange <- input$MatchSlider[1]:input$MatchSlider[2]
+    tracklist <- input$checkGroup
     
+    if (length(tracklist)==0) {output$ggDensity <- renderPrint("Choose a track bro...")} else {
     output$ggDensity <- renderPlot({
-      ggplot(mariokart[(mariokart$Match. %in% matchrange), ], aees) + geom_density(alpha=.3)    
-      })
+      ggplot(mariokart[(mariokart$Match. %in% matchrange) & (mariokart$Track %in% tracklist), ], aees) + geom_density(alpha=.3)    
+      })}
     ##############################################################
     
-    #table <- mariokart[(mariokart$Match. %in% matchrange), ]
-    #output$table <- renderTable(table)
+    if (input$bestracer == "Mario") {
+      output$ocharacterpic <-
+      output$obestracer <- renderPrint(input$bestracer)
+    }
+    
+    else if (input$bestracer == "Peter") {
+      output$character <-
+      output$obestracer <- renderPrint(input$bestracer)
+    }
     
   })
 })
