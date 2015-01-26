@@ -1,37 +1,45 @@
-Rpresentation
+A little Mario Kart data analysis
 ========================================================
-author: 
-date: 
+author: Mario Ibanez
+date: January 25, 2015
 
-First Slide
-========================================================
-
-For more details on authoring R presentations click the
-**Help** button on the toolbar.
-
-- Bullet 1
-- Bullet 2
-- Bullet 3
-
-Slide With Code
+Have you ever...
 ========================================================
 
+Have you ever written down the results for 1600 Mario Kart
+Races 64 races with your friend and had the following questions? :
 
-```r
-summary(cars)
-```
+- How do I present this data so everyone can see it?
+- How do I find an easy way to graphically present the data?
+- What if I don't know how to analyze my own data?
 
-```
-     speed           dist       
- Min.   : 4.0   Min.   :  2.00  
- 1st Qu.:12.0   1st Qu.: 26.00  
- Median :15.0   Median : 36.00  
- Mean   :15.4   Mean   : 42.98  
- 3rd Qu.:19.0   3rd Qu.: 56.00  
- Max.   :25.0   Max.   :120.00  
-```
-
-Slide With Plot
+There is good news!
 ========================================================
 
-![plot of chunk unnamed-chunk-2](Rpresentation-figure/unnamed-chunk-2-1.png) 
+Lucky for you Mario Kart fans out there, the Mario Kart 
+Shiny is here!  
+
+And it's very easy to use, check out the next slide for a 
+quick glimpse!
+
+A nice ggplot has been set up for your ease of use!
+========================================================
+
+![plot of chunk unnamed-chunk-1](Rpresentation-figure/unnamed-chunk-1-1.png) 
+
+***
+
+This particular plot is a ggplot of the distribution of total match points between two rival racers.  In the interactive shiny, you are able to manipulate many settings and watch as the graph responds!
+
+In conclusion..
+========================================================
+
+I hope that you see there is hope in analyzing your Mario
+Kart 64 data, as this working example clearly shows.  
+
+Please take a moment and check it out!
+https://ibanmd.shinyapps.io/MarioKartShiny/
+
+See you next time!
+
+![alt text](base.png)

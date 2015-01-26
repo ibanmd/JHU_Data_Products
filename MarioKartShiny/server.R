@@ -18,7 +18,7 @@ shinyServer(
       aees <- aes(x=MatchRaceWins, fill=Racer)
     }
     
-    else if(input$lookat=="MatchRaceWins" & input$by=="Extra or 150cc") {
+    else if(input$lookat=="MatchRaceWins" & input$by=="Extra150cc") {
       aees <- aes(x=MatchRaceWins, fill=Extra150cc)
     }
     ##########
@@ -30,7 +30,7 @@ shinyServer(
       aees <- aes(x=MatchPoints, fill=Racer)
     }
     
-    else if(input$lookat=="MatchPoints" & input$by=="Extra or 150cc") {
+    else if(input$lookat=="MatchPoints" & input$by=="Extra150cc") {
       aees <- aes(x=MatchPoints, fill=Extra150cc)
     }
     ##########
@@ -42,7 +42,7 @@ shinyServer(
       aees <- aes(x=Points, fill=Racer)
     }
     
-    else if(input$lookat=="Points" & input$by=="Extra or 150cc") {
+    else if(input$lookat=="Points" & input$by=="Extra150cc") {
       aees <- aes(x=Points, fill=Extra150cc)
     }
     ##########
@@ -83,7 +83,6 @@ shinyServer(
     else if (input$bestracer == "???") {
       filename <- normalizePath(file.path('./images', paste('base','.png',sep='')))   
     }
-    
     
     # image2 sends pre-rendered images
     output$image2 <- renderImage({

@@ -1,28 +1,54 @@
-Rpresentation
+A little Mario Kart data analysis
 ========================================================
-author: 
-date: 
+author: Mario Ibanez
+date: January 25, 2015
 
-First Slide
-========================================================
-
-For more details on authoring R presentations click the
-**Help** button on the toolbar.
-
-- Bullet 1
-- Bullet 2
-- Bullet 3
-
-Slide With Code
+Have you ever...
 ========================================================
 
-```{r}
-summary(cars)
-```
+Have you ever written down the results for 1600 Mario Kart
+Races 64 races with your friend and had the following questions? :
 
-Slide With Plot
+- How do I present this data so everyone can see it?
+- How do I find an easy way to graphically present the data?
+- What if I don't know how to analyze my own data?
+
+There is good news!
+========================================================
+
+Lucky for you Mario Kart fans out there, the Mario Kart 
+Shiny is here!  
+
+And it's very easy to use, check out the next slide for a 
+quick glimpse!
+
+A nice ggplot has been set up for your ease of use!
 ========================================================
 
 ```{r, echo=FALSE}
-plot(cars)
+library(shiny)
+library(ggplot2)
+mariokart <- read.csv("MarioKart64.csv")
+
+ggDensity <- ggplot(mariokart, aes(x=MatchPoints, fill=Racer)) + geom_density(alpha=.3)    
+      
+
+ggDensity
 ```
+
+***
+
+This particular plot is a ggplot of the distribution of total match points between two rival racers.  In the interactive shiny, you are able to manipulate many settings and watch as the graph responds!
+
+In conclusion..
+========================================================
+
+I hope that you see there is hope in analyzing your Mario
+Kart 64 data, as this working example clearly shows.  
+
+Please take a moment and check it out!
+https://ibanmd.shinyapps.io/MarioKartShiny/
+
+See you next time!
+
+![alt text](base.png)
